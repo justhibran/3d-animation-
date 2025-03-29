@@ -8,9 +8,9 @@ import Box from './Box';
 
 export default function Animation({ cols, width }) {
   const [selectedBox, setSelectedBox] = useState(null);
-  const [Point, setPoint] = useState({ x: 0, y: 0 });
+  const [Point, setPoint] = useState({ x: 0, z: 0 });
   const toggleSelection = (id, x, z) => {
-    setPoint({ x: x, y: z }); // Actualiza el estado correctamente
+    setPoint({ x: x, z: z }); // Actualiza el estado correctamente
     setSelectedBox(id);
 
   };
@@ -33,7 +33,7 @@ export default function Animation({ cols, width }) {
               cols={cols}
               BoxContext={BoxContext}
               isSelected={selectedBox === id}
-              onClick={() => toggleSelection(id, x * (cols / 20), y * (cols / 20))}
+              onClick={() => toggleSelection(id, x * (cols / 80), y * (cols / 80))}
             />
           </BoxContext.Provider>
         );
